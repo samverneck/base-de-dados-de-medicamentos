@@ -10,7 +10,7 @@ const organism = {
 }
 
 const DNA = {
-	organism,
+  organism,
   molecule
 }
 const Cell = require('./../../_factories/module')(DNA)
