@@ -6,6 +6,7 @@ module.exports = (Organism) =>
     
     return Organism.find(query)
       .exec()
-      .then(success, error)
+      .then(success)
+      .catch(error)
   }
 
