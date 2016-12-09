@@ -4,6 +4,7 @@ const REQUIRED = require(CONFIG_PATH + 'fields-required')
 const OPTIONAL = require(CONFIG_PATH + 'fields-optional')
 const FIELDS_REMOVE = require(CONFIG_PATH + 'fields-remove')
 
+const isIncluded = (list, item) => list.includes(item)
 const filterAtoms = (key) => require(CONFIG_PATH + 'fields-optional').includes
 const mapForObject = (option, i) => Object.assign({}, {[option]: CONFIG[option]})
 const reduceToAtom = (acc, cur) => Object.assign(acc, {
@@ -19,7 +20,7 @@ const createRequired = (CONFIG) =>
 
 const createOptional = (CONFIG) => 
   Object.keys(CONFIG)
-    .filter( filterAtoms )
+    .filter( isIncluded.bind(this, OPTIONAL) )
     .map( mapForObject )
     .reduce( reduceToAtom ), {})
 
