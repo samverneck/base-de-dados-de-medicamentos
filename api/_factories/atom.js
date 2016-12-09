@@ -20,14 +20,5 @@ const createOptional = (CONFIG) =>
         [Object.keys(cur)[0]]: cur[Object.keys(cur)[0]]
       }), {})
 
-module.exports = (CONFIG) => {
-  // console.log('CONFIG atom factory', CONFIG)
-  // console.log('FIELDS_REMOVE', FIELDS_REMOVE)
-  // if (CONFIG.COMPOSE) {
-  //   console.log('EH COMPOOOSEE')
-  //   const _atoms = Object.keys(CONFIG).filter((field) => !FIELDS_REMOVE.includes(field))
-
-  // }
-  return Object.assign( {}, createRequired(CONFIG), createOptional(CONFIG))
-}
+module.exports = (CONFIG) => Object.assign({}, createRequired(CONFIG), createOptional(CONFIG))
 
