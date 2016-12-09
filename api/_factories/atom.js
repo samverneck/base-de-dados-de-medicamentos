@@ -11,7 +11,7 @@ const isIncludedOnOptional = isIncluded.bind(this, OPTIONAL)
 const mapForObject = (option, i) => Object.assign({}, {[option]: CONFIG[option]})
 const reduceToAtom = (acc, cur) => Object.assign(acc, {
         [Object.keys(cur)[0]]: cur[Object.keys(cur)[0]]
-      }
+})
 
 const createRequired = (CONFIG) => 
   CONFIG.VALIDATE_FACTORY_PATH
@@ -24,7 +24,7 @@ const createOptional = (CONFIG) =>
   Object.keys(CONFIG)
     .filter( isIncludedOnOptional )
     .map( mapForObject )
-    .reduce( reduceToAtom ), {})
+    // .reduce( reduceToAtom ), {})
 
 module.exports = (CONFIG) => Object.assign({}, createRequired(CONFIG), createOptional(CONFIG))
 
