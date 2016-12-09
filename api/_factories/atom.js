@@ -5,7 +5,6 @@ const OPTIONAL = require(CONFIG_PATH + 'fields-optional')
 const FIELDS_REMOVE = require(CONFIG_PATH + 'fields-remove')
 
 const createRequired = (CONFIG) => 
-  // console.log('CONFIG no atom factory', CONFIG)
   CONFIG.VALIDATE_FACTORY_PATH
     ? ({type: CONFIG.type,
         validate: require(CONFIG.VALIDATE_FACTORY_PATH)(CONFIG.ATOM_NAME.toUpperCase()) 
