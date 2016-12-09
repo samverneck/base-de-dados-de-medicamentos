@@ -4,6 +4,12 @@ const REQUIRED = require(CONFIG_PATH + 'fields-required')
 const OPTIONAL = require(CONFIG_PATH + 'fields-optional')
 const FIELDS_REMOVE = require(CONFIG_PATH + 'fields-remove')
 
+const filterAtoms = (key) => OPTIONAL.includes(key)
+const mapForObject = (option, i) => Object.assign({}, {[option]: CONFIG[option]})
+const reduceToAtom = (acc, cur) => Object.assign(acc, {
+        [Object.keys(cur)[0]]: cur[Object.keys(cur)[0]]
+      }
+
 const createRequired = (CONFIG) => 
   CONFIG.VALIDATE_FACTORY_PATH
     ? ({type: CONFIG.type,
@@ -13,11 +19,9 @@ const createRequired = (CONFIG) =>
 
 const createOptional = (CONFIG) => 
   Object.keys(CONFIG)
-    .filter( (key) => OPTIONAL.includes(key) )
-    .map( (option, i) => Object.assign({}, {[option]: CONFIG[option]}) )
-    .reduce( (acc, cur) => Object.assign(acc, {
-        [Object.keys(cur)[0]]: cur[Object.keys(cur)[0]]
-      }), {})
+    .filter( filterAtoms )
+    .map( mapForObject )
+    .reduce( reduceToAtom ), {})
 
 module.exports = (CONFIG) => Object.assign({}, createRequired(CONFIG), createOptional(CONFIG))
 
