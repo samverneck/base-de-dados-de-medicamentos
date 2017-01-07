@@ -23,8 +23,8 @@ const createRequired = (CONFIG) =>
 const createOptional = (CONFIG) => 
   Object.keys(CONFIG)
     .filter( isIncludedOnOptional )
-    .map( mapForObject )
-    // .reduce( reduceToAtom ), {})
+    // .map( mapForObject )
+    .reduce( reduceToAtom , {})
 
 module.exports = (CONFIG) => Object.assign({}, createRequired(CONFIG), createOptional(CONFIG))
 

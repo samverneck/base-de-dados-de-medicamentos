@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/db-atomic-modules')
+mongoose.connect('mongodb://localhost/db-atomic-seed')
 mongoose.Promise = require('bluebird')
 
 const db = mongoose.connection
@@ -9,4 +9,4 @@ db.on('open', () => console.log('Conexão aberta.') )
 db.on('connected', (err) => console.log('Conectado') )
 db.on('disconnected', (err) => console.log('Desconectado') )
 
-module.exports = db
+module.exports = mongoose

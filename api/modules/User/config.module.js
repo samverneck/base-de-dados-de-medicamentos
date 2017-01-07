@@ -1,18 +1,16 @@
 const name = require('./../../_config/module/getName')(__filename)
-const organelles = []
-
+console.log('name', name)
 const molecule = {
   structure: require('./molecular.structure')
 }
-const organism = { 
-  name
-  // , organelles
-}
+const organelles = [
+  'findAllByPage',
+  'findByFilters'
+]
 
-const DNA = {
-  organism,
-  molecule
-}
+const organism = { name, organelles }
+const DNA = { organism, molecule}
+
 const Cell = require('./../../_factories/module')(DNA)
 
 module.exports = Cell

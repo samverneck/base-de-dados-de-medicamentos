@@ -1,5 +1,5 @@
 {
-  "name": "AtomicDesign-Factories",
+  "name": "AtomicDesign-seed",
   "version": "1.0.0",
   "description": "Fábricas de geração das partes do Atomic Design",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/suissa/AtomicDesign-Factories.git"
+    "url": "git+https://github.com/suissa/AtomicDesign-seed.git"
   },
   "keywords": [
     "suissa",
@@ -18,7 +18,7 @@
     "atomicdesign",
     "module",
     "factory",
-    "factories",
+    "seed",
     "quark",
     "hadron",
     "atom",
@@ -28,9 +28,9 @@
   "author": "Suissa",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/suissa/AtomicDesign-Factories/issues"
+    "url": "https://github.com/suissa/AtomicDesign-seed/issues"
   },
-  "homepage": "https://github.com/suissa/AtomicDesign-Factories#readme",
+  "homepage": "https://github.com/suissa/AtomicDesign-seed#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.1",

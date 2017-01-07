@@ -1,4 +1,5 @@
-const db = require('./_config/db')
+const mongoose = require('./_config/db')
+global.mongoose = mongoose
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000

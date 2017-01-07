@@ -1,4 +1,4 @@
-const PROJECT_NAME = 'base-de-dados-de-medicamentos/api'
+const PROJECT_NAME = 'v1/api'
 const PROJECT_PATH =  __dirname.split(PROJECT_NAME)[0]+PROJECT_NAME
 const QUARKS_PATH = PROJECT_PATH + '/_quarks/'
 const ATOMS_PATH = PROJECT_PATH + '/_atoms/'
